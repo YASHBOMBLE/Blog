@@ -1,0 +1,12 @@
+.gender {
+    width: 22px;
+    height: 22px;
+}
+.genderTitle{
+    color: aliceblue;
+    font-size: 16px;
+    margin-left: 8px;
+}
+.gender-container{
+    display: inline-block;
+}
