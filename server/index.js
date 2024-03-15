@@ -114,19 +114,27 @@ app.post('/addblog',async(req,res)=>{
     const{title,blog} = req.body;
 
 
-    const user = new Blogs({
+    const blogs = new Blogs({
         title : title,
         blog : blog
 
     })
-    const savedBlog = await Blogs.save();
+    const savedBlog = await blogs.save();
 
     res.json({
             success: false,
             message: "Blog Added Successfully",
     })
 })
+app.get('/allblog',async (req,res)=>{
+    const exercise = await Blogs.find();
 
+    res.json({
+        success : true,
+        message : "Blog fetch successfully",
+        data : exercise
+    }) 
+})
 app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
   app.get('*', (req, res) => {
