@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import validator from 'validator';
 import User from './models/User.js';
 import Blogs from './models/Blogs.js';
+import path from 'path';
+const __dirname = path.resolve();
 dotenv.config();
 const app = express();
 app.use(express.json());
@@ -51,13 +53,7 @@ app.post('/signup', async (req, res) => {
 
     // validation to check if all fields are filled ends here
 
-    if (!validator.isEmail(email)) {
-        return res.json({
-            success: false,
-            message: "Please enter valid email",
-
-        })
-    }
+    
     if (!validator.isMobilePhone(phone)) {
         return res.json({
             success: false,
@@ -131,7 +127,11 @@ app.post('/addblog',async(req,res)=>{
     })
 })
 
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
+  });
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

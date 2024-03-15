@@ -47,7 +47,7 @@ function Login() {
             <div class="bg-img">
                 <div class="content">
                     <header>Login Form</header>
-                    <form action="#">
+                    
                         <div class="field">
                             <span class="fa fa-user"></span>
                             <input type="text" required placeholder="Email or Phone" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -61,9 +61,10 @@ function Login() {
                             <a href="#">Forgot Password?</a>
                         </div>
                         <div class="field">
+                           
                             <input type="submit" value="LOGIN" onClick={loginUser}/>
                         </div>
-                    </form>
+                 
 
 
                     <div class="signup">
