@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import axios from 'axios'
 import { currentUser } from '../../util/currentUser'
-import Navbar from '../../component/Navbar'
+import Navbar from '../../component/Navbar/Navbar'
 import Swal from 'sweetalert2'
 import './Home.css'
 import Footer from '../../component/Footer/Footer'

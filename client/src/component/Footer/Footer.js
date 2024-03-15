@@ -19,7 +19,7 @@ function Footer() {
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/profile">Profile</a></li>
                                         <li><a href="/addblog">Add Blog</a></li>
-                                        <li><a href="/about">About Us</a></li>
+                                        
                                     </ul>
                                 </div>
                             </div>

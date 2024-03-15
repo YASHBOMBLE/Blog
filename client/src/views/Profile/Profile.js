@@ -1,9 +1,10 @@
 import { React, useEffect } from 'react'
 import './Profile.css'
-import Navbar from '../../component/Navbar.js'
+import Navbar from '../../component/Navbar/Navbar.js'
 import user from './../../images/user.png'
 import { loginRequired } from '../../util/LoginRequired';
 import { currentUser } from '../../util/currentUser.js';
+import Footer from '../../component/Footer/Footer.js';
 function Profile() {
     useEffect(() => {
         loginRequired();
@@ -47,7 +48,7 @@ function Profile() {
                     </div>
                 </div>
             </div>
-
+<Footer />
         </div>
     )
 }

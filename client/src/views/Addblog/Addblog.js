@@ -2,8 +2,9 @@ import {React,useState,useEffect} from 'react'
 import { loginRequired } from '../../util/LoginRequired';
 import axios from 'axios';
 import swal from 'sweetalert';
-import Navbar from '../../component/Navbar'
+import Navbar from '../../component/Navbar/Navbar'
 import { currentUser } from '../../util/currentUser';
+import Footer from '../../component/Footer/Footer';
 
 function Addblog() {
     useEffect(() => {
@@ -52,7 +53,7 @@ function Addblog() {
     return (
 
         <div>
-            <Navbar />
+          
             <div className='row'>
                 <div className='col-12'>
                     <div class="bg-img">
@@ -69,7 +70,7 @@ function Addblog() {
                                 <textarea placeholder="Write Blog Here..."value={blog} onChange={(e) => setBlog(e.target.value)}>
                                 </textarea>
                             </div>
-                            <div class="field space">
+                            <div class="field space mt-5">
                                 <input type="submit" value="AddBlog" onClick={addBlog} />
                             </div>
                         </div>
@@ -77,6 +78,7 @@ function Addblog() {
                 </div>
 
             </div>
+            <Footer />
         </div>
 
     )

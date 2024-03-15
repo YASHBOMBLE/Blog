@@ -3,7 +3,7 @@ import axios from 'axios'
 import swal from 'sweetalert';
 import './Login.css'
 import Footer from '../../component/Footer/Footer';
-import Navbar from '../../component/Navbar';
+import Navbar from '../../component/Navbar/Navbar';
 
 function Login() {
 

@@ -4,6 +4,7 @@ import axios from 'axios'
 import swal from 'sweetalert';
 import { currentUser } from '../../util/currentUser';
 import './Signup.css'
+import Footer from '../../component/Footer/Footer';
 function Signup() {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -102,6 +103,7 @@ function Signup() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
 
     )
