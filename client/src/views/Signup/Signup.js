@@ -75,11 +75,11 @@ function Signup() {
                             <input type="text" required placeholder="Full Name" />
                         </div>
                         <div class="field space">
-                            <span class="fa fa-user"></span>
+                            <span class="fa-solid fa-envelope"></span>
                             <input type="text" required placeholder="Email" value={name} onChange={(e) => setName(e.target.value)}/>
                         </div>
                         <div class="field space">
-                            <span class="fa fa-user"></span>
+                            <span class="fa-solid fa-phone" ></span>
                             <input type="text" required placeholder="Mo.No" value={phone} onChange={(e) => setPhone(e.target.value)}/>
                         </div>
 

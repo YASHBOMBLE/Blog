@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom'
 import { currentUser } from './../util/currentUser.js'
 import './Navbar.css'
 function Navbar() {
-
-
     function logOut() {
         localStorage.removeItem('currentUser');
         window.location.href = '/login'
     }
-
     function liginpage() {
         window.location.href = '/login'
     }
@@ -50,12 +47,11 @@ function Navbar() {
                                     <Link to="/profile" className='nav-link' >Profile</Link>
                                 </li>
                                 <li class="nav-item">
-                                    <Link to="/contactus" className='nav-link' > Contact Us </Link>
+                                    <Link to="/addblog" className='nav-link' > Add Blog </Link>
                                 </li>
                                 <li class="nav-item">
                                     <Link to="/about" className='nav-link' > About Us </Link>
                                 </li>
-
                             </ul>
                             <form class="d-flex align-items-center">
                                 {

@@ -5,6 +5,7 @@ import validator from 'validator';
 import User from './models/User.js';
 import Blogs from './models/Blogs.js';
 import path from 'path';
+import { Fade } from 'react-slideshow-image';
 const __dirname = path.resolve();
 dotenv.config();
 const app = express();
@@ -111,21 +112,40 @@ app.post('/signup', async (req, res) => {
 })
 
 app.post('/addblog',async(req,res)=>{
-    const{title,blog} = req.body;
+    const{title,blog,author} = req.body;
 
+    if(!title || !blog || !author) {
+       return res.json({
+            success: false,
+            message: "Enter All Data",
+    });
+    }
 
     const blogs = new Blogs({
         title : title,
-        blog : blog
+        blog : blog,
+        author : author
 
     })
     const savedBlog = await blogs.save();
 
     res.json({
-            success: false,
+            success: true,
             message: "Blog Added Successfully",
     })
 })
+
+app.post('/deleteBlog',async (req,res)=>{
+    const title = req.body;
+
+    const del = await Blogs.deleteOne(title);
+
+    res.json({
+        success : true,
+        message : "Blog Deleted"
+    }) 
+})
+
 app.get('/allblog',async (req,res)=>{
     const exercise = await Blogs.find();
 

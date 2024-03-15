@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import swal from 'sweetalert';
 import './Login.css'
+import Footer from '../../component/Footer/Footer';
+import Navbar from '../../component/Navbar';
 
 function Login() {
 
@@ -44,6 +46,7 @@ function Login() {
     return (
 
         <div>
+           
             <div class="bg-img">
                 <div class="content">
                     <header>Login Form</header>
@@ -73,6 +76,7 @@ function Login() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
