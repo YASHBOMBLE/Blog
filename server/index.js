@@ -5,7 +5,7 @@ import validator from 'validator';
 import User from './models/User.js';
 import Blogs from './models/Blogs.js';
 import path from 'path';
-import { Fade } from 'react-slideshow-image';
+
 const __dirname = path.resolve();
 dotenv.config();
 const app = express();
