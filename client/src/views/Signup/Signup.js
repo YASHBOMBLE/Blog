@@ -77,7 +77,7 @@ function Signup() {
                         </div>
                         <div class="field space">
                             <span class="fa-solid fa-envelope"></span>
-                            <input type="text" required placeholder="Email" value={name} onChange={(e) => setName(e.target.value)}/>
+                            <input type="text" required placeholder="Email" value={name} onChange={(e) => setEmail(e.target.value)}/>
                         </div>
                         <div class="field space">
                             <span class="fa-solid fa-phone" ></span>
