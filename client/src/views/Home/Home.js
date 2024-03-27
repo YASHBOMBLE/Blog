@@ -45,7 +45,7 @@ function Home() {
                       if(loginRequired()){
   const response = axios.post('/deleteBlog', {
                           title: index.title
-                        })
+                        })}
 
                         await Swal.fire({
                           title: "Success!",
@@ -53,7 +53,7 @@ function Home() {
                           icon: "success"
                         });
 
-                        window.location.reload();  }}}
+                        window.location.reload();  }}
                         ></i></span>
                     </div>
                   </>
