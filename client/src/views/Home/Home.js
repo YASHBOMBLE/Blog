@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import axios from 'axios'
 import { currentUser } from '../../util/currentUser'
+import { loginRequired } from '../../util/LoginRequired';
 import Navbar from '../../component/Navbar/Navbar'
 import Swal from 'sweetalert2'
 import './Home.css'
@@ -41,7 +42,8 @@ function Home() {
                       <span className='blog'>Blog:{index.blog}</span><br />
                       <span className='Author'>Author:{index.author}</span>
                       <span><i class="fa-solid fa-trash delete-icon" onClick={async () => {
-                        const response = axios.post('/deleteBlog', {
+                      if(loginRequired()){
+  const response = axios.post('/deleteBlog', {
                           title: index.title
                         })
 
@@ -51,7 +53,7 @@ function Home() {
                           icon: "success"
                         });
 
-                        window.location.reload();   }}
+                        window.location.reload();  }}}
                         ></i></span>
                     </div>
                   </>
