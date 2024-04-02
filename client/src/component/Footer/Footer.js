@@ -18,8 +18,7 @@ function Footer() {
                                     <ul className='li-item'>
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/profile">Profile</a></li>
-                                        <li><a href="/addblog">Add Blog</a></li>
-                                        
+                                        <li><a href="/addblog">Add Blog</a></li>       
                                     </ul>
                                 </div>
                             </div>

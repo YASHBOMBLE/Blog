@@ -42,18 +42,21 @@ function Home() {
                       <span className='blog'>Blog:{index.blog}</span><br />
                       <span className='Author'>Author:{index.author}</span>
                       <span><i class="fa-solid fa-trash delete-icon" onClick={async () => {
-                      if(loginRequired()){
-  const response = axios.post('/deleteBlog', {
-                          title: index.title
-                        })}
-
+                      if(!currentUser){
+                        loginRequired()
+                      }
+                      else{
+                      const response = axios.post('/deleteBlog', {
+                        title: index.title
+                      })
+                    
                         await Swal.fire({
                           title: "Success!",
                           text: "Blog Deleted",
                           icon: "success"
                         });
 
-                        window.location.reload();  }}
+                        window.location.reload();  }}}
                         ></i></span>
                     </div>
                   </>
