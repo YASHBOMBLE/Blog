@@ -5,6 +5,8 @@ import validator from 'validator';
 import User from './models/User.js';
 import Blogs from './models/Blogs.js';
 import path from 'path';
+import { Resend } from 'resend';
+
 
 const __dirname = path.resolve();
 dotenv.config();
@@ -102,12 +104,22 @@ app.post('/signup', async (req, res) => {
 
     const savedUser = await user.save();
 
+    const resend = new Resend('re_6NQ9hDTH_Jn23RPseef7FWCyyz1dbR2oq');
+
+
+
     res.json({
         success: true,
         message: "User created successfully",
         data: savedUser
     })
 
+    resend.emails.send({
+        from: 'onboarding@resend.dev',
+        to: `${email}`,
+        subject: 'Signup',
+        html: '<p><center>Congrats You Have Successfully registered for Blog Site.<br /> </center><center><h3>Thank You !</h3></p>'
+      });
 
 })
 
